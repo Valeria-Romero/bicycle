@@ -7,13 +7,7 @@ const UserSchema = new mongoose.Schema({
         minlength : 3,
         maxlength : 30
     },
-    lastName : {
-        type : String,
-        required : true,
-        minlength : 3,
-        maxlength : 30
-    },
-    email : {
+    username : {
         type : String,
         required : true,
         unique : true
@@ -33,14 +27,14 @@ const UserModel = {
     getUsers : function(){
         return User.find();
     },
-    getUserById : function( email ){
-        return User.findOne({ email });
+    getUserById : function( username ){
+        return User.findOne({ username });
     },
-    deleteUserById : function( email ){
-        return User.remove( { email } );
+    deleteUserById : function( username ){
+        return User.remove( { username } );
     },
-    updateUser : function( email, userToUpdate ){
-        return User.findOneAndUpdate( { email }, {$set : userToUpdate }, { new : true } )
+    updateUser : function( username, userToUpdate ){
+        return User.findOneAndUpdate( { username }, {$set : userToUpdate }, { new : true } )
     }
 };
 

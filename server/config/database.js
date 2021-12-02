@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/bicycle', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/beltexam', {useNewUrlParser: true});
 
 mongoose.connection.on('error', err => {
     console.error(`Mongoose default connection error: ${ err }`);

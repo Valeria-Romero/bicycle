@@ -4,15 +4,15 @@ const { UserController } = require( './../controllers/userController' );
 
 UserRouter
     .route( '/login' )
-    .get( UserController.loadLogin )
     .post( UserController.userLogin );
 
 UserRouter
-    .post( '/adduser', UserController.createUser);
-UserRouter
-    .get( '/logout', UserController.userLogout );
+    .route('/adduser')
+    .post(UserController.createUser);
 
-UserRouter
-    .get( '/getByEmail', UserController.getUserByEmail );
+// UserRouter
+//     .get( '/logout', UserController.userLogout );
+
+
 
 module.exports = {UserRouter }
