@@ -73,7 +73,7 @@ const UserController = {
                         throw new Error();
                     }
                     console.log('validation success');
-                    response.status(200).json({message:"Validation success"})
+                    response.status(200).json(result)
                 })
                 .catch( error => {
                     console.log("Wrong password");
